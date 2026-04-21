@@ -18,6 +18,9 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+origins = ["https://football-scout-frontend.vercel.app",
+           "http://localhost:5173",]
+
 # 🔥 CORS Middleware: Mandatory for allowing requests from your React Frontend
 app.add_middleware(
     CORSMiddleware,
